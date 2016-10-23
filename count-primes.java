@@ -9,6 +9,7 @@ Credits:
     cases.
 */
 
+// version 1
 public class Solution {
     public int countPrimes(int n) {
         
@@ -34,5 +35,25 @@ public class Solution {
         }
         
         return count;
+    }
+}
+
+// version 2
+public class Solution {
+    public int countPrimes(int n) {
+        if(n < 2) return 0;
+        boolean[] chart = new boolean[n];
+        int counter = 0;
+        int limit = (int) Math.sqrt(n);
+        for(int i = 2; i < n; i++){
+            if(!chart[i]){
+                counter++;
+                if(i > limit) continue;
+                for(int j = i * i; j < n; j += i){
+                    chart[j] = true;
+                }
+            }
+        }
+        return counter;
     }
 }

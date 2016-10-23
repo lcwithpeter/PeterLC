@@ -27,6 +27,7 @@ Tags:
 	Dynamic Programming;
 */
 
+// version 1
 public class Solution {
     public int coinChange(int[] coins, int amount) {
         if(coins == null || coins.length == 0) return -1;
@@ -49,5 +50,28 @@ public class Solution {
         }
         
         return dp[amount] == Integer.MAX_VALUE ? -1 : dp[amount];
+    }
+}
+
+// version 2
+public class Solution {
+    public int coinChange(int[] coins, int amount) {
+        if(amount < 1) return 0;
+        if(coins.length < 1) return -1;
+        int[] table = new int[amount + 1];
+        Arrays.sort(coins);
+        for(int i = 0; i < coins.length && coins[i] < table.length; i++){
+            table[coins[i]] = 1;
+        }
+        for(int i = 1; i < table.length; i++){
+            if(table[i] == 1) continue;
+            table[i] = Integer.MAX_VALUE;
+            for(int j = 0; j < coins.length && i - coins[j] > 0; j++){
+                if(table[i - coins[j]] == -1) continue;
+                table[i] = Math.min(table[i], 1 + table[i - coins[j]]);
+            }
+            if(table[i] == Integer.MAX_VALUE) table[i] = -1;
+        }
+        return table[amount];
     }
 }
