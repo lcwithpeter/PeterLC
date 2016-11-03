@@ -12,6 +12,11 @@ mengli's [github] (https://github.com/mengli/leetcode)
 |My Order|Problem Link   | Solution  |
 |--:|---|---| 
 
+|  192 |  [Linked List Random Node](https://leetcode.com/problems/linked-list-random-node/) | [Java](https://github.com/lcwithpeter/PeterLC/blob/master/linked-list-random-node.java)  |
+|  191 |  [Non-overlapping Intervals](https://leetcode.com/problems/non-overlapping-intervals/) | [Java](https://github.com/lcwithpeter/PeterLC/blob/master/non-overlapping-intervals.java)  |
+|  190 |  [Arranging Coins](https://leetcode.com/problems/arranging-coins/) | [Java](https://github.com/lcwithpeter/PeterLC/blob/master/arranging-coins.java)  |
+|  189 |  [Kth Smallest Element in a Sorted Matrix](https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/) | [Java](https://github.com/lcwithpeter/PeterLC/blob/master/kth-smallest-element-in-a-sorted-matrix.java)  |
+|  188 |  [Remove K Digits](https://leetcode.com/problems/remove-k-digits/) | [Java](https://github.com/lcwithpeter/PeterLC/blob/master/remove-k-digits.java)  |
 |  187 |  [Battleships in a Board](https://leetcode.com/problems/battleships-in-a-board/) | [Java](https://github.com/lcwithpeter/PeterLC/blob/master/battleships-in-a-board.java)  |
 |  186 |  [Russian Doll Envelopes](https://leetcode.com/problems/russian-doll-envelopes/) | [Java](https://github.com/lcwithpeter/PeterLC/blob/master/russian-doll-envelopes.java)  |
 |  185 |  [Frog Jump](https://leetcode.com/problems/frog-jump/) | [Java](https://github.com/lcwithpeter/PeterLC/blob/master/frog-jump.java)  |
