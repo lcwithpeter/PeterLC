@@ -49,3 +49,23 @@ public class Solution {
         return maxLength;
     }
 }
+
+// O(nlogn)
+public class Solution {
+    public int lengthOfLIS(int[] nums) {
+        if(nums == null || nums.length == 0) return 0;
+        int[] dp = new int[nums.length];
+        int size = 0;
+        for(int target: nums){
+            int start = 0, end = size;
+            while(start < end){
+                int mid = start + (end - start) / 2;
+                if(dp[mid] < target) start = mid + 1;
+                else end = mid;
+            }
+            dp[start] = target;
+            if(start == size) size++;
+        }
+        return size;
+    }
+}

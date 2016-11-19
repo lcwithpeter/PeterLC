@@ -23,6 +23,7 @@ Note: m and n will be at most 100.
 Tags: Array; Dynamic Programming
 */
 
+// version 1
 public class Solution {
     public int uniquePathsWithObstacles(int[][] obstacleGrid) {
         if(obstacleGrid == null || obstacleGrid.length == 0 || 
@@ -41,5 +42,28 @@ public class Solution {
             }
         }
         return x[x.length - 1][x[0].length - 1];
+    }
+}
+
+// version 2
+public class Solution {
+    public int uniquePathsWithObstacles(int[][] obstacleGrid) {
+        if(obstacleGrid == null || obstacleGrid.length == 0 || obstacleGrid[0].length == 0) return 0;
+        
+        int[][] table = new int[obstacleGrid.length + 1][obstacleGrid[0].length + 1];
+        if(obstacleGrid[0][0] == 1) return 0;
+        table[1][1] = 1;
+        
+        for(int i = 0; i < obstacleGrid.length; i++){
+            for(int j = 0; j < obstacleGrid[0].length; j++){
+                if(i == 0 && j == 0) continue;
+                if(obstacleGrid[i][j] == 1) continue;
+                int left = j - 1 >= 0 ? (obstacleGrid[i][j-1] == 1 ? 0 : table[i+1][j]) : 0;
+                int up = i - 1 >= 0 ? (obstacleGrid[i-1][j] == 1 ? 0 : table[i][j+1]) : 0;
+                table[i+1][j+1] = left + up;
+            }
+        }
+        
+        return table[obstacleGrid.length][obstacleGrid[0].length];
     }
 }

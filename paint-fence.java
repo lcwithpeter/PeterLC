@@ -23,6 +23,8 @@ Similar Problems:
 	https://leetcode.com/problems/paint-house-ii/
 */
 
+
+// version 1
 public class Solution {
     public int numWays(int n, int k) {
         if(n == 0) return 0;
@@ -35,5 +37,34 @@ public class Solution {
             sameColorCounts = tmp;
         }
         return diffColorCounts + sameColorCounts;
+    }
+}
+
+
+// version 2
+/*
+Use dp, dp[i] is the number of ways to paint. When painting post #i, consider:
+1. Use a different color with post #(i-1), we have (k-1)*dp[i-1] ways.
+2. Use a same color with post #(i-1), but a different color with post #(i-2), so
+   we have (k-1)*dp[i-2] ways.
+   
+In total, for post #i, we have (k-1)*(dp[i-1] + dp[i-2]) ways.
+
+Since for each post, only two posts are related, we can use two variables to 
+improve space.
+*/
+public class Solution {
+    public int numWays(int n, int k) {
+        if(n == 0 || k == 0) return 0;
+        if(n == 1) return k;
+        
+        int a = k, b = k * k;
+        for(int i = 2; i < n; i++){
+            int c = (k - 1) * (a + b);
+            a = b;
+            b = c;
+        }
+        
+        return b;
     }
 }

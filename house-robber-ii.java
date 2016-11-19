@@ -21,6 +21,7 @@ Credits:
 Tags: Dynamic Programming
 */
 
+// version 1
 public class Solution {
     public int rob(int[] nums) {
         if(nums == null || nums.length == 0) return 0;
@@ -37,5 +38,26 @@ public class Solution {
             val[j] = Math.max(val[j - 1], nums[i] + val[j - 2]);
         }
         return val[end - start];
+    }
+}
+
+// version 2
+// more concise
+public class Solution {
+    private int[] houses;
+    public int rob(int[] nums) {
+        if(nums == null || nums.length == 0) return 0;
+        if(nums.length == 1) return nums[0];
+        houses = nums;
+        return Math.max(helper(0, houses.length - 2),
+                        helper(1, houses.length - 1));
+    }
+    private int helper(int start, int end){
+        if(start == end) return houses[start];
+        int[] dp = new int[(end - start + 1) + 2];
+        for(int i = 2; i < dp.length && start <= end; i++, start++){
+            dp[i] = Math.max(dp[i-1], dp[i-2] + houses[start]);
+        }
+        return dp[dp.length - 1];
     }
 }

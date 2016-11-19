@@ -11,7 +11,16 @@ mengli's [github] (https://github.com/mengli/leetcode)
 
 |My Order|Problem Link   | Solution  |
 |--:|---|---| 
-
+house-robber-iii
+range-sum-query-immutable
+non-overlapping-intervals
+find-right-interval
+maximum-xor-of-two-numbers-in-an-array
+number-of-boomerangs
+minimum-number-of-arrows-to-burst-balloons
+minimum-moves-to-equal-array-elements
+reconstruct-original-digits-from-english
+course-schedule-ii
 |  192 |  [Linked List Random Node](https://leetcode.com/problems/linked-list-random-node/) | [Java](https://github.com/lcwithpeter/PeterLC/blob/master/linked-list-random-node.java)  |
 |  191 |  [Non-overlapping Intervals](https://leetcode.com/problems/non-overlapping-intervals/) | [Java](https://github.com/lcwithpeter/PeterLC/blob/master/non-overlapping-intervals.java)  |
 |  190 |  [Arranging Coins](https://leetcode.com/problems/arranging-coins/) | [Java](https://github.com/lcwithpeter/PeterLC/blob/master/arranging-coins.java)  |
